@@ -1,7 +1,12 @@
-<h1>Authenticate as one of the following users</h1>
 
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.name, session_url(user_id: user.id), method: :post %></li>
-  <% end %>
-</ul>
+
+<div class="container" style="width:40%;padding-top:15%">
+  <%= form_tag(session_url, method: "post") do %>
+    <h2 class="form-signin-heading" style="text-align:center;">登 录</h2>
+    <label for="inputName" class="sr-only">昵称</label>
+    <input type="text" name="name" id="inputName" class="form-control" placeholder="昵称" required>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+  <% end%>
+
+</div> <!-- /container -->

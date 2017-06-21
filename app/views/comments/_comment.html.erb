@@ -1,4 +1,10 @@
 <article data-user-id="<%= comment.user.id %>">
-  <h3>Comment by <%= comment.user.name %></h3>
-  <p><%= comment.content %></p>
+	<div class="row">
+    <div class="col-md-2">
+      <b><%= comment.user.name %></b>
+    </div>
+    <div class="col-md-10" style="text-align:left;">
+      <p><%= comment.content %></p>
+    </div>
+  </div>
 </article>

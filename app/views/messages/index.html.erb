@@ -1,7 +1,26 @@
-<h1>Messages</h1>
 
-<ul>
-  <% @messages.each do |message| %>
-    <li><%= link_to message.title, message %></li>
-  <% end %>
-</ul>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 main">
+      <h3 class="page-header">当前聊天室</h3>
+
+		    <div class="row placeholders">
+		    	<% @messages.each do |message| %>
+		      <div class="col-xs-6 col-sm-3 placeholder">
+		        <a href="<%= message_path(id: message.id)%>"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail"></a>
+		        <h4><%= message.title %></h4>
+		        <span class="text-muted"><%= message.content%></span>
+		      </div>
+          <% end %>
+		    </div>
+		  </div>
+  </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+

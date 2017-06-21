@@ -1,5 +1,12 @@
-<h1><%= @message.title %></h1>
 
-<p><%= @message.content %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 main">
+        <h3 class="page-header">当前聊天室:<%= @message.title %> </h3>
+        <p><%= @message.content %></p>
+		    <div class="row placeholders">
+					<%= render 'comments/comments', message: @message %>
+		    </div>
+  </div>
+</div>
 
-<%= render 'comments/comments', message: @message %>
