@@ -10,7 +10,7 @@ require 'mina/git'
 #   branch       - Branch name to deploy. (needed by mina/git)
 set :user , 'root'
 set :application_name, 'gchat'
-set :domain, '192.168.165.230'
+set :domain, '10.129.56.223'
 set :deploy_to, '/opt/project/gchat'
 set :repository, 'git@code.glodon.com:lizj-c/gchat.git'
 set :branch, 'master'

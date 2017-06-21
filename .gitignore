@@ -17,4 +17,3 @@
 !/log/.keep
 !/tmp/.keep
 .ruby-version
-Gemfile.lock
