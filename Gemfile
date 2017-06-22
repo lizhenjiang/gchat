@@ -24,3 +24,4 @@ group :development do
   gem 'spring'
   gem 'mina'
 end
+gem 'therubyracer'

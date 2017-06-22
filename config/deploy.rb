@@ -39,15 +39,15 @@ end
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 task :setup do
   # command %{rbenv install 2.3.0}
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/public/upload"]
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
+  # queue! %[mkdir -p "#{deploy_to}/#{shared_path}/public/upload"]
+  # queue! %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
+  # queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
 
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config"]
+  # queue! %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
+  # queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config"]
 
-  queue! %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
-  queue  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/database.yml'."]
+  # queue! %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
+  # queue  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/database.yml'."]
 end
 
 task :submit_git do
