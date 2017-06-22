@@ -12,7 +12,7 @@ set :user , 'root'
 set :application_name, 'gchat'
 set :domain, '10.129.56.223'
 set :deploy_to, '/opt/project/gchat'
-set :repository, 'git@code.glodon.com:lizj-c/gchat.git'
+set :repository, 'git@github.com:lizhenjiang/gchat.git'
 set :branch, 'master'
 set :shared_paths, ['config/database.yml', 'log', 'public/uploads', 'public/upload']
 # Optional settings:
