@@ -75,8 +75,10 @@ task :deploy do
       in_path(fetch(:current_path)) do
         command %{mkdir -p tmp/}
         # command %{touch tmp/restart.txt}
-        command "bundle exec puma -p 28080 cable/config.ru -d"
-        command "bundle exec rails s -p 3006 -b 0.0.0.0 -e development -d"
+        # command "bundle exec puma -p 28080 cable/config.ru -d"
+        # command "bundle exec rails s -p 3006 -b 0.0.0.0 -e development -d"
+        command "sh stop.sh"
+        command "sh start.sh"
       end
     end
   end
