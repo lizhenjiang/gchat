@@ -40,5 +40,8 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # Set Action Cable server url for consumer connection
-  config.action_cable.url = 'ws://localhost:28080'
+  # config.action_cable.url = 'ws://localhost:28080'
+
+  config.action_cable.url = 'ws://10.129.56.223:28080'
+  ActionCable.server.config.disable_request_forgery_protection = true
 end
