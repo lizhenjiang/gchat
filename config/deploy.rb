@@ -53,7 +53,7 @@ end
 task :submit_git do
   system 'git add . -A'
   system 'git commit -m "' + Time.now.to_s + '"'
-  system 'git push code master'
+  system 'git push origin master'
 end
 
 desc "Deploys the current version to the server."
