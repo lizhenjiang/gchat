@@ -26,3 +26,4 @@ group :development do
   gem 'mina'
 end
 gem 'therubyracer'
+gem 'mysql2'

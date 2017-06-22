@@ -66,7 +66,7 @@ task :deploy do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
-    invoke :'rails:db_migrate'
+    # invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
@@ -74,6 +74,7 @@ task :deploy do
       in_path(fetch(:current_path)) do
         command %{mkdir -p tmp/}
         # command %{touch tmp/restart.txt}
+        queue! "RAILS_ENV=production bundle exec nohup rails s -p 3007 -b 0.0.0.0 &"
       end
     end
   end
