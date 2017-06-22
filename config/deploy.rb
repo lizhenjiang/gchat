@@ -53,7 +53,7 @@ end
 task :submit_git do
   system 'git add . -A'
   system 'git commit -m "' + Time.now.to_s + '"'
-  system 'git push'
+  system 'git push code master'
 end
 
 desc "Deploys the current version to the server."
@@ -63,6 +63,7 @@ task :deploy do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
+    invoke :submit_git
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
@@ -74,7 +75,7 @@ task :deploy do
       in_path(fetch(:current_path)) do
         command %{mkdir -p tmp/}
         # command %{touch tmp/restart.txt}
-        command "RAILS_ENV=production bundle exec rails s -p 3007 -b 0.0.0.0 -d"
+        command "bundle exec rails s -p 3007 -b 0.0.0.0 -e production -d"
       end
     end
   end
