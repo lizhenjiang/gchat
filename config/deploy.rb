@@ -74,7 +74,7 @@ task :deploy do
       in_path(fetch(:current_path)) do
         command %{mkdir -p tmp/}
         # command %{touch tmp/restart.txt}
-        queue! "RAILS_ENV=production bundle exec nohup rails s -p 3007 -b 0.0.0.0 &"
+        command "RAILS_ENV=production bundle exec rails s -p 3007 -b 0.0.0.0 -d"
       end
     end
   end
